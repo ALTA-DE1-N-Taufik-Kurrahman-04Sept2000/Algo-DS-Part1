@@ -1,5 +1,20 @@
+def is_prime(number):
+    if number <= 1:
+        return False
+    for i in range(2, int(number ** 0.5) + 1):
+        if number % i == 0:
+            return False
+    return True
+
 def primeX(x):
-    return 0
+    count = 0
+    number = 2
+    while count < x:
+        if is_prime(number):
+            count += 1
+        if count == x:
+            return number
+        number += 1
 
 if __name__ == "__main__":
     print(primeX(1))  # 2
